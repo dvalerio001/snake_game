@@ -1,0 +1,5 @@
+.snake__game {
+  width: 300px;
+  height: 300px;
+  border: 6px solid black;
+}
