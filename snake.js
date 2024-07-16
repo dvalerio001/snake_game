@@ -27,6 +27,11 @@ let snake = [
   { x: 110, y: 150 },
 ];
 
+// Horizontal velocity
+let dx = 10;
+// Vertical velocity
+let dy = 0;
+
 function drawSnakePart(snakePart) {
   // Draw a rectangle for each part of the snake
   ctx.fillStyle = "lightgreen";
@@ -37,4 +42,10 @@ function drawSnakePart(snakePart) {
 function drawSnake() {
   // Print snake parts on the canvas
   snake.forEach(drawSnakePart);
+}
+
+function moveSnake() {
+  const head = { x: snake[0].x + dx, y: snake[0].y + dy }; //dx is the horizontal velocity of the snake. yx = vertical velocity
+  snake.unshift(head); //add head to beginning of snake array
+  snake.pop(); //remove last element in array
 }
